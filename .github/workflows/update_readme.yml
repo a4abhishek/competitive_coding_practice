@@ -1,0 +1,39 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *' # Runs daily
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Update README
+      run: python update_readme.py
+
+    - name: Check for Changes
+      id: git-check
+      run: |
+        git diff --exit-code
+        echo "CHANGES=$(git diff --name-only README.md)" >> $GITHUB_ENV
+
+    - name: Commit and Push
+      if: env.CHANGES == 'README.md'
+      run: |
+        git config --global user.name 'Abhishek Kashyap'
+        git config --global user.email 'avskksyp@gmail.com'
+        git add README.md
+        git commit -m "Update README with problem list"
+        git push
