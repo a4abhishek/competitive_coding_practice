@@ -1,0 +1,27 @@
+name: Build and Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Run Makefile
+      run: |
+        make all
+
+    - name: Check for Uncommitted Changes
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "There are changes after running 'make all'";
+          exit 1;
+        fi

@@ -1,4 +1,4 @@
-from unittest import TestCase
+from unittest import TestCase, main
 from solution import Solution, buildTree
 
 
@@ -17,3 +17,7 @@ class TestSolution(TestCase):
         #   1
         root = buildTree("5 4 6 3 N N 7 1")
         self.assertEqual(solution.getCount(root, 1, 5), 4)
+
+
+if __name__ == '__main__':
+    main()

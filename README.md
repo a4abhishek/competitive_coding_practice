@@ -50,6 +50,47 @@ However, it is recommended to update the problem list manually along with the ad
     git push
     ```
 
+## Finalizing Changes
+
+Before committing your changes, it is recommended to run the following command:
+
+```bash
+make all
+```
+
+This will perform a series of actions including normalizing end-of-line characters, running unit tests, and updating the problem list. It ensures that your changes are properly vetted and the repository remains consistent.
+
+## Writing Unit Tests
+
+When adding a new solution or modifying an existing one, it's important to include corresponding unit tests. A typical test file should look like this:
+
+```python
+from unittest import TestCase, main
+from solution import Solution
+
+class TestSolution(TestCase):
+    def test_your_function(self):
+        solution = Solution()
+
+        # Replace with your test cases
+        self.assertEqual(solution.your_function(arguments), expected_result)
+
+# This section allows the test to be run by the Makefile
+if __name__ == '__main__':
+    main()
+```
+
+### Key Points for Writing Tests:
+
+- Import `TestCase` and `main` from the `unittest` module.
+- Import the class or functions you want to test (e.g., `Solution` and `buildTree`).
+- Define a class that inherits from `TestCase`.
+- Write test methods for each aspect of your solution you want to test. These methods should start with `test_`.
+- Use assertions like `assertEqual`, `assertTrue`, etc., to validate the behavior of your solution.
+- Include the `if __name__ == '__main__': main()` block to enable running tests via the Makefile.
+
+Adhering to this structure ensures that your tests are consistent and can be automatically run using the Makefile.
+
 ## License
 
 [MIT License](LICENSE.md)
