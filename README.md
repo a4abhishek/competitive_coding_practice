@@ -14,6 +14,7 @@ This repository contains my solutions and practices for various competitive codi
 - [Smallest subarray with sum greater than x](smallest_subarray_with_sum_greater_than_x)
 - [Subarray with given sum](subarray_with_given_sum)
 - [Symmetric Tree](symmetric_tree)
+- [Isomorphic Strings](isomorphic_strings)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.
