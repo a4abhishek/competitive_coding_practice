@@ -2,6 +2,14 @@
 
 This repository contains my solutions and practices for various competitive coding problems. Each problem is organized in its own directory, complete with a detailed explanation, source code, and unit tests.
 
+## Initial Setup
+
+After cloning the repository, it's important to perform an initial setup to configure the environment correctly. Currently, this setup includes installing the pre-commit hook. In the future, it may be expanded to include additional setup tasks as needed. To complete the initial setup, simply run the following command in the root of the repository:
+
+```bash
+make setup
+````
+
 ## Repository Structure
 
 - **Problem Directories**: Each directory is named after a specific problem and contains the following:

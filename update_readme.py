@@ -8,6 +8,9 @@ from collections import OrderedDict
 def extract_problem_info(directory):
     """Extract the problem name and the Markdown link from the README.md file."""
     readme_path = f'{directory}/README.md'
+    if not os.path.isfile(readme_path):
+        return None, None
+
     with open(readme_path, 'r') as file:
         for line in file:
             if line.startswith('# '):

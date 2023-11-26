@@ -1,0 +1,82 @@
+#!/bin/bash
+
+# Function to log info messages
+info() {
+  echo "$1"
+}
+
+# Function to log error messages
+error() {
+  echo "$1" >&2
+}
+
+# Function to stash only unstaged changes
+stash_unstaged_changes() {
+  # Create a temporary stash entry for the staged changes
+  git stash push --keep-index --quiet
+  STASHED=$?
+
+  # Stash the unstaged changes
+  git stash push --include-untracked -m "Pre-commit stash of unstaged changes"
+  UNSTASHED=$?
+
+  # Reapply the staged changes if there was something stashed initially
+  if [ "$STASHED" -eq 0 ]; then
+    git stash pop --index --quiet
+  fi
+
+  # Inform the user
+  if [ "$UNSTASHED" -eq 0 ]; then
+    info "Unstaged changes stashed."
+  fi
+}
+
+# Function to unstash changes
+unstash_changes() {
+  if [ "$UNSTASHED" -eq 0 ]; then
+    git stash pop --quiet
+    info "Stashed changes have been reapplied."
+  fi
+}
+
+# Exporting the function to make it available in subshells
+export -f unstash_changes
+
+# Function to run make all and handle errors
+run_make_all() {
+  if make all; then
+    git add -u
+    info "Changes made by 'make all' have been staged."
+  else
+    ## Revert changes to modified files, leaving staged changes intact
+    #git checkout HEAD -- $(git diff --name-only) # TODO: Fix this, currently it checkouts all the staged changes too
+    error "Build failed, please resolve any issues and try committing again."
+    exit 1
+  fi
+}
+
+# Function to check for staged changes
+check_for_changes() {
+  if [ -z "$(git diff --cached --name-only)" ]; then
+    info "No changes were made by 'make all'."
+    exit 0
+  fi
+}
+
+# Main function to orchestrate the script
+main() {
+  # Stash any unstaged changes
+  stash_unstaged_changes
+
+  # Set trap to unstash changes on script exit
+  trap unstash_changes EXIT
+
+  # Run make all and handle staging
+  run_make_all
+
+  # Check for changes to commit
+  check_for_changes
+}
+
+# Call the main function
+main
