@@ -23,6 +23,7 @@ make setup
 - [Subarray with given sum](subarray_with_given_sum)
 - [Symmetric Tree](symmetric_tree)
 - [Isomorphic Strings](isomorphic_strings)
+- [Best Time to Buy and Sell Stock](best_time_to_buy_and_sell_stock)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.

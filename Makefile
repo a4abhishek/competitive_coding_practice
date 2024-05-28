@@ -8,7 +8,9 @@ all: vet test update-readme
 
 # Target to run all tests
 test:
-	@echo "Running tests..."
+	@echo "Running Go tests..."
+	@go test ./... -v
+	@echo "Running Python tests..."
 	@find . -type f -name 'test_*.py' -exec $(PYTHON) {} \;
 	@echo "All Tests Passed."
 
