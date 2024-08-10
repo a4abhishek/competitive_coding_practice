@@ -24,6 +24,7 @@ make setup
 - [Symmetric Tree](symmetric_tree)
 - [Isomorphic Strings](isomorphic_strings)
 - [Best Time to Buy and Sell Stock](best_time_to_buy_and_sell_stock)
+- [LeetCode - 108. Convert Sorted Array to Binary Search Tree](convert_sorted_array_to_binary_search_tree)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.
