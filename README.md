@@ -29,6 +29,7 @@ make setup
 - [Maximum Number of Vowels in a Substring of Given Length](maximum_number_of_vowels_in_a_substring_of_given_length)
 - [Leetcode 1220: Count Vowels Permutation](count_vowels_permutation)
 - [LeetCode 334: Increasing Triplet Subsequence](increasing_triplet_subsequence)
+- [LeetCode 5: Longest Palindromic Substring](longest-palindromic-substring)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.
