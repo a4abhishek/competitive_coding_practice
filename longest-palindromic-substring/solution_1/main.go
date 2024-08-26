@@ -2,75 +2,53 @@ package main
 
 import "fmt"
 
-func expandAroundCenter(str string, oddPalindrome bool, i int) (int, int) {
-	s := i - 1
-	e := i + 1
-
-	if !oddPalindrome {
-		s = i
-	}
-
+func expandAroundCenter(str string, start, end int) (int, int) {
 	rs := []rune(str)
-	for s >= 1 && e < len(rs)-1 && rs[s-1] == rs[e+1] {
-		s--
-		e++
+	for start >= 0 && end < len(rs) && rs[start] == rs[end] {
+		start--
+		end++
 	}
 
-	return s, e
+	return start + 1, end - 1
 }
 
 func longestPalindrome(str string) string {
 	if len(str) == 0 {
+		// Without this check, the function might return the null character `"\x00"`,
+		// which represents a non-existent value in the string.
 		return ""
 	}
 
-	beginning := 0 // Beginning of the palindrome
-	end := 0       // End of the palindrome
+	start := 0 // Beginning of the palindrome
+	end := 0   // End of the palindrome
 
 	rs := []rune(str)
 	for i := 0; i < len(rs)-1; i++ {
-		var s, e int
-
-		if i > 0 && rs[i-1] == rs[i+1] {
-			// odd palindrome
-			// fmt.Printf("odd palindrome center=%d\n", i)
-			s, e = expandAroundCenter(str, true, i)
-
-			if e-s > end-beginning {
-				beginning = s
-				end = e
-			}
+		// odd palindrome
+		s, e := expandAroundCenter(str, i, i)
+		if e-s > end-start {
+			start, end = s, e
 		}
 
-		if rs[i] == rs[i+1] {
-			// even palindrome
-			// fmt.Printf("even palindrome center=%d\n", i)
-			s, e = expandAroundCenter(str, false, i)
-
-			if e-s > end-beginning {
-				beginning = s
-				end = e
-			}
+		// even palindrome
+		s, e = expandAroundCenter(str, i, i+1)
+		if e-s > end-start {
+			start, end = s, e
 		}
 	}
 
-	// Handling palindrome of length 1. Example: abc
-	if end == 0 {
-		return string(rs[0])
-	}
-
-	// fmt.Printf("%s ---> beginning: %d, end: %d, length: %d\n", str, beginning, end, end-beginning+1)
-	return string(rs[beginning : end+1])
+	// fmt.Printf("%s ---> start: %d, end: %d, length: %d ---> %s\n", str, start, end, end-start+1, string(rs[start : end+1]))
+	return string(rs[start : end+1])
 }
 
 func main() {
-	fmt.Println(longestPalindrome(""))
-	fmt.Println(longestPalindrome("a"))
-	fmt.Println(longestPalindrome("bab"))
-	fmt.Println(longestPalindrome("bb"))
-	fmt.Println(longestPalindrome("ccc"))
-	fmt.Println(longestPalindrome("aaaa"))
-	fmt.Println(longestPalindrome("cbbd"))
-	fmt.Println(longestPalindrome("babad"))
-	fmt.Println(longestPalindrome("abc"))
+	fmt.Println(longestPalindrome(""))      // Expected: ""
+	fmt.Println(longestPalindrome("a"))     // Expected: "a"
+	fmt.Println(longestPalindrome("bab"))   // Expected: "bab"
+	fmt.Println(longestPalindrome("bb"))    // Expected: "bb"
+	fmt.Println(longestPalindrome("ccc"))   // Expected: "ccc"
+	fmt.Println(longestPalindrome("aaaa"))  // Expected: "aaaa"
+	fmt.Println(longestPalindrome("cbbd"))  // Expected: "bb"
+	fmt.Println(longestPalindrome("babad")) // Expected: "bab" or "aba"
+	fmt.Println(longestPalindrome("abc"))   // Expected: "a", "b", or "c"
 }
