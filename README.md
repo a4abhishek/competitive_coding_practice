@@ -27,6 +27,7 @@ make setup
 - [LeetCode - 108. Convert Sorted Array to Binary Search Tree](convert_sorted_array_to_binary_search_tree)
 - [Problem 114: Flatten Binary Tree to Linked List](flatten_binary_tree_to_linked_list)
 - [Maximum Number of Vowels in a Substring of Given Length](maximum_number_of_vowels_in_a_substring_of_given_length)
+- [Leetcode 1220: Count Vowels Permutation](count_vowels_permutation)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.
