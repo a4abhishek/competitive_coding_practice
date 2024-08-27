@@ -23,3 +23,4 @@ Similarly, `G(1) = 2` as there are no consecutive 'L' characters in any of the t
 
 ## Approach
 - [Count permutations based on certain rule](./solution_1/)
+- [Custom fibbonacci based approach](./solution_2/)
