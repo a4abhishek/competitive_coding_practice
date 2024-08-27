@@ -20,7 +20,8 @@ vet: normalize-eol
 # Target to normalize end-of-line characters
 normalize-eol:
 	@echo "Normalizing end-of-line characters..."
-	@find . -type f -exec sed -i 's/\r$$//' {} \;
+	@find . -type f ! -path "./.git/*" ! -path "./.vscode/*" ! -path "./.idea/*" ! -path "./venv/*" ! -path "./env/*" \
+	-exec sed -i 's/\r$$//' {} \;
 	@echo "Normalization complete for end-of-line."
 
 # Target to update the README
