@@ -31,6 +31,7 @@ make setup
 - [LeetCode 334: Increasing Triplet Subsequence](increasing_triplet_subsequence)
 - [LeetCode 5: Longest Palindromic Substring](longest-palindromic-substring)
 - [Nice String Count and Fibonacci Sequence Relation](nice_strings)
+- [Maximum Subarray](maximum_subarray)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.
