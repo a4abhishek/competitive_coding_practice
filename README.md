@@ -34,6 +34,7 @@ make setup
 - [LeetCode 53: Maximum Subarray](maximum_subarray)
 - [Count Nearly Lucky Numbers in an Array](nearly_lucky_numbers)
 - [Count Valid Subarrays](count_valid_subarrays)
+- [Smart Taxi Driver](smart_taxi_driver)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.
