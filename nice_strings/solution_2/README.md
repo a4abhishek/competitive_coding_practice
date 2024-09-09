@@ -1,6 +1,6 @@
-## Approach
+# Approach (Reccursive Fibbonacci)
 
-### Understanding `G(I)`
+## Understanding `G(I)`
 
 `G(I)` represents the count of all nice strings of length `I`. This problem can be related to a modified Fibonacci sequence:
 
@@ -17,14 +17,14 @@
   $$G(I) = G(I-1) + G(I-2)$$
   This is a Fibonacci-like sequence where each term is the sum of the previous two terms, but with different initial conditions.
 
-### Task Requirement
+## Task Requirement
 
 Given the recursive nature of `G(I)`, the task reduces to:
 
 1. Compute `G(I)` for each `1 <= I <= N`.
 2. Compute the sum $G(1)^2 + G(2)^2 + \dots + G(N)^2 \mod (10^9 + 7)$.
 
-### Solution Approach
+## Solution Approach
 
 1. **Precompute `G(I)` values:**
    - Use dynamic programming to compute `G(I)` up to `N` using the Fibonacci-like recurrence.
@@ -32,7 +32,7 @@ Given the recursive nature of `G(I)`, the task reduces to:
 2. **Sum the squares of `G(I)` values:**
    - Calculate the sum $G(1)^2 + G(2)^2 + \dots + G(N)^2 \mod (10^9 + 7)$.
 
-### Example Implementation in Python
+## Example Implementation in Python
 
 ```python
 MOD = 10**9 + 7
@@ -58,7 +58,7 @@ result = calculate_sum_of_squares(N)
 print(result)
 ```
 
-### Explanation of Approach
+## Explanation of Approach
 
 - **Why Fibonacci?**:
   The relationship between consecutive elements in `G(I)` mimics the Fibonacci sequence because constructing valid strings for `G(I)` depends on the valid strings for `G(I-1)` and `G(I-2)`.
@@ -66,6 +66,6 @@ print(result)
 - **Modulo Operation:**
   The modulo operation is used to keep numbers manageable and prevent overflow, as well as to meet the problem's constraints.
 
-### Conclusion
+## Conclusion
 
 The problem effectively leverages the properties of Fibonacci-like sequences to count specific types of strings and then sum their squares. The approach is both mathematically interesting and computationally efficient, with a time complexity of `O(N)` due to the dynamic programming step.

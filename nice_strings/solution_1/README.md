@@ -1,8 +1,8 @@
-## Approach
+# Approach (Permutative String Generation)
 
 The solution is based on dynamic programming, specifically inspired by the [Count Vowels Permutation](../../count_vowels_permutation/) problem.
 
-### Detailed Steps:
+## Detailed Steps
 
 1. **Dynamic Programming Table (dp):**
    - The code uses a map `dp` where `dp[i][r]` represents the number of "nice strings" of length `i` that end with the character `r`, where `r` is either 'L' or 'R'.
@@ -87,7 +87,7 @@ n = 5
 print(calculate_sum_of_squares(n))
 ```
 
-### Explanation of the Python Code:
+## Explanation of the Python Code
 
 1. **Base Cases:**
    - When `n = 1`: There are two possible nice strings (`"R"` and `"L"`), so the function returns 1 for both 'R' and 'L'.
