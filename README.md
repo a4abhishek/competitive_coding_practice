@@ -36,6 +36,7 @@ make setup
 - [Count Valid Subarrays](count_valid_subarrays)
 - [Smart Taxi Driver](smart_taxi_driver)
 - [Smart Taxi Driver - 2](smart_taxi_driver_2)
+- [LeetCode 2385: Amount of Time for Binary Tree to be Burnt](burning_binary_tree)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.
