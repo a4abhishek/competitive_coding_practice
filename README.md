@@ -37,6 +37,7 @@ make setup
 - [Smart Taxi Driver](smart_taxi_driver)
 - [Smart Taxi Driver - 2](smart_taxi_driver_2)
 - [LeetCode 2385: Amount of Time for Binary Tree to be Burnt](burning_binary_tree)
+- [LeetCode 98: Validate Binary Search Tree](validate_binary_search_tree)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.
