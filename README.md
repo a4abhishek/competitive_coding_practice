@@ -39,6 +39,7 @@ make setup
 - [LeetCode 2385: Amount of Time for Binary Tree to be Burnt](burning_binary_tree)
 - [LeetCode 98: Validate Binary Search Tree](validate_binary_search_tree)
 - [LeetCode 150: Evaluate Reverse Polish Notation](evaluate_reverse_polish_notation)
+- [LeetCode 2762: Continuous Subarrays](continuous_subarrays)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.
