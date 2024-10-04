@@ -57,4 +57,5 @@ nums1 = [1, 2], nums2 = [3, 4]
 
 ## Approaches
 
-- [Approach 1](./solution_1/) - Merge-Based Median Finding
+- [Approach 1](./solution_1/) - Two-Pointer Median Finder
+- [Approach 2](./solution_2/) - Full Merge Median Finder

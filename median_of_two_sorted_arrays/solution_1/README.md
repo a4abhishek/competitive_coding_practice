@@ -1,4 +1,4 @@
-# Merge-Based Median Finding
+# Two-Pointer Median Finder
 
 This approach uses the concept of merging two sorted arrays similar to the **merge step** of merge sort. The key idea is to efficiently find the median by merging the arrays only until the median is found, instead of merging the entire arrays.
 
