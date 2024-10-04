@@ -41,6 +41,7 @@ make setup
 - [LeetCode 150: Evaluate Reverse Polish Notation](evaluate_reverse_polish_notation)
 - [LeetCode 2762: Continuous Subarrays](continuous_subarrays)
 - [LeetCode 49: Group Anagrams](group_anagrams)
+- [LeetCode 4: Median of Two Sorted Arrays](median_of_two_sorted_arrays)
 ## How to Use This Repository
 
 - **Viewing a Problem**: Navigate to the respective problem directory and open the `README.md` file for a detailed problem description.
